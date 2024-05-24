@@ -1,15 +1,17 @@
 <?php
 
-require "functions.php";
+require 'functions.php';
 
 
 $url = $_SERVER['REQUEST_URI'];
 
 if($url === '/'){
     require 'controllers/index.php';
-}else if ($url === '/about.php'){
+} else if ($url === '/about'){
     require 'controllers/about.php';
-}
-else if ($url === '/contact'){
+} else if ($url === '/contact'){
     require 'controllers/contact.php';
 }
+
+
+?>
