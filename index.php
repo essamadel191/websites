@@ -3,15 +3,20 @@
 require 'functions.php';
 
 
-$url = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-if($url === '/'){
-    require 'controllers/index.php';
-} else if ($url === '/about'){
-    require 'controllers/about.php';
-} else if ($url === '/contact'){
-    require 'controllers/contact.php';
+$routes = [
+    '/' => 'controllers/index.php',
+    '/about' => 'controllers/about.php',
+    '/contact' => 'controllers/contact.php'
+];
+
+
+# The function is if the array has a key of the given name exists
+# So if we have the corresponding URI only on that condition should we 
+# require the corresponding controller
+
+if(array_key_exists($uri,$routes)){
+    require $routes[$uri];
 }
 
-
-?>
