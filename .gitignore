@@ -1,1 +1,5 @@
 node_modules
+package-lcok.json
+package.json
+.vscode
+settings.json
