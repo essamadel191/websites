@@ -1,7 +1,6 @@
 
 <?php
 
-   
-    require '/home/essam/test1/websites2/index.view.php' ;
+    $heading = 'Home';
 
-?>
+    require "views/index.view.php" ;
